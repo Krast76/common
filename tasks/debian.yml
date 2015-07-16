@@ -1,0 +1,22 @@
+- name: Mise à jours
+  apt: upgrade=dist update_cache=yes
+
+- name: Install a base package with apt
+  apt: name={{ item }}  state=present
+  with_items:
+     - vim
+     - curl
+     - git
+     - htop
+     - pv
+     - tmux
+     - dialog
+     - bash-completion
+     - zip
+
+- name: Install open-vm-tools for Debian Distro
+  apt: name=open-vm-tools state=present
+  when: ansible_virtualization_type == 'VMWare'
+
+- name: Personalise Vim Debian
+  template: src=vimrc.j2 dest=/etc/vim/vimrc 

@@ -1,0 +1,14 @@
+---
+# tasks file for common
+- name: Include Debian File
+  include: debian.yml
+  when: ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu'
+
+- name: Include CentOS File
+  include: centos.yml
+  when: ansible_distribution == 'CentOS' or ansible_distribution == 'Red Hat Enterprise Linux'
+
+
+- name: Set hostname var
+  hostname: name={{ hostname }}  
+  when: hostname is defined
