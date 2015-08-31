@@ -30,4 +30,4 @@
   when: ansible_virtualization_type == 'VMWare'
 
 - name: Customize vimrc RHEL Like
-  template: src=vimrc.j2 dest=/etc/vimrc
+  template: src=vimrc_centos.j2 dest=/etc/vimrc
