@@ -27,7 +27,7 @@
 
 - name: Install open-vm-tools for CentOS Distro
   yum: name=open-vm-tools state=latest
-  when: ansible_virtualization_type == 'VMWare'
+  when: ansible_virtualization_type == 'VMware'
 
 - name: Customize vimrc RHEL Like
   template: src=vimrc_centos.j2 dest=/etc/vimrc
