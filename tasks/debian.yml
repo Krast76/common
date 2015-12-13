@@ -4,15 +4,15 @@
        dest: "/etc/apt/sources.list" 
        follow: yes
 
-- name: Mise à jours
-  apt: 
-    upgrade: dist 
-    update_cache: yes
+#- name: Mise à jours
+#  apt:
+#    upgrade: dist 
+#    update_cache: yes
 
 - name: Install a base package with apt
   apt: 
-   name: "{{ item }}"
-   state: present
+    name: "{{ item }}"
+    state: present
   with_items:
      - vim
      - curl
@@ -27,6 +27,7 @@
      - aptitude
 
 - name: Install open-vm-tools for Debian Distro
+<<<<<<< HEAD
   apt: 
     name: "open-vm-tools" 
     state: present
@@ -35,6 +36,11 @@
 - name: Debug Virtualization
   debug: 
     msg: " Var is {{ ansible_virtualization_type }}"
+=======
+  apt: name=open-vm-tools state=present
+  when: ansible_virtualization_type == "VMware"
+
+>>>>>>> 50b22c0384ae9c43c575541f665db679eebdfefb
 - name: Personalise Vim Debian
   template: 
     src: vimrc.j2 
