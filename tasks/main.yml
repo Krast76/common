@@ -8,7 +8,8 @@
   include: centos.yml
   when: ansible_distribution == 'CentOS' or ansible_distribution == 'Red Hat Enterprise Linux'
 
-
-- name: Set hostname var
-  hostname: name={{ hostname }}  
-  when: hostname is defined
+- name: Add SSH Key
+  authorized_key: user=root key={ item }
+  with_fileglob:
+     - files/active_ssh_pub_keys/*
+  tags: ssh-key
