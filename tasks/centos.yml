@@ -37,15 +37,10 @@
     replace: 'SELINUX=disabled'
 
 - name: Install open-vm-tools for CentOS Distro
-<<<<<<< HEAD
   yum: 
-   name: open-vm-tools 
-   state: latest
+    name: open-vm-tools 
+    state: latest
   when: ansible_virtualization_type == 'VMWare'
-=======
-  yum: name=open-vm-tools state=latest
-  when: ansible_virtualization_type == 'VMware'
->>>>>>> 50b22c0384ae9c43c575541f665db679eebdfefb
 
 - name: Customize vimrc RHEL Like
   template: 
