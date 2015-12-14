@@ -1,15 +1,15 @@
 - name: Update all yum package
-  yum: 
-   name: "*" 
+  yum:
+   name: "*"
    state: latest
 
 - name: Install epel-release
-  yum: 
+  yum:
    name: "epel-release"
    state: latest
 
 - name: Install a base package with yum
-  yum: 
+  yum:
    name: "{{ item }}"
    state: latest
   with_items:
@@ -31,18 +31,18 @@
   selinux: state=disabled
 
 - name: Modify SELinux in sysconfig
-  replace: 
-    dest: /etc/sysconfig/selinux 
-    regexp: 'SELINUX=[Ee]nforcing' 
+  replace:
+    dest: /etc/sysconfig/selinux
+    regexp: 'SELINUX=[Ee]nforcing'
     replace: 'SELINUX=disabled'
 
 - name: Install open-vm-tools for CentOS Distro
-  yum: 
-    name: open-vm-tools 
+  yum:
+    name: open-vm-tools
     state: latest
   when: ansible_virtualization_type == 'VMWare'
 
 - name: Customize vimrc RHEL Like
-  template: 
-   src: vimrc_centos.j2 
+  template:
+   src: vimrc_centos.j2
    dest: /etc/vimrc

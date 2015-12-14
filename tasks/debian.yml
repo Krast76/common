@@ -1,16 +1,16 @@
 - name: Copy source
-  template: 
-       src: sources.list.j2 
-       dest: "/etc/apt/sources.list" 
+  template:
+       src: sources.list.j2
+       dest: "/etc/apt/sources.list"
        follow: yes
 
 - name: Mise à jours
   apt:
-    upgrade: dist 
+    upgrade: dist
     update_cache: yes
 
 - name: Install a base package with apt
-  apt: 
+  apt:
     name: "{{ item }}"
     state: present
   with_items:
@@ -27,25 +27,25 @@
      - aptitude
 
 - name: Install open-vm-tools for Debian Distro
-  apt: 
-    name: "open-vm-tools" 
+  apt:
+    name: "open-vm-tools"
     state: present
   when: ansible_virtualization_type == "VMWare"
 
 - name: Debug Virtualization
-  debug: 
+  debug:
     msg: " Var is {{ ansible_virtualization_type }}"
 
 - name: Install open-vmtools for VMWare
-  apt: 
-    name: open-vm-tools 
+  apt:
+    name: open-vm-tools
     state: present
   when: ansible_virtualization_type == "VMware"
 
 - name: Copy source
-  template: 
-       src: sources.list.j2 
-       dest: "/etc/apt/sources.list" 
+  template:
+       src: sources.list.j2
+       dest: "/etc/apt/sources.list"
        follow: yes
 
 - name: Mise à jours
@@ -54,7 +54,7 @@
     update_cache: yes
 
 - name: Install a base package with apt
-  apt: 
+  apt:
     name: "{{ item }}"
     state: present
   with_items:
@@ -71,27 +71,27 @@
      - aptitude
 
 - name: Install open-vm-tools for Debian Distro
-  apt: 
-    name: "open-vm-tools" 
+  apt:
+    name: "open-vm-tools"
     state: present
   when: ansible_virtualization_type == "VMWare"
 
 - name: Debug Virtualization
-  debug: 
+  debug:
     msg: " Var is {{ ansible_virtualization_type }}"
 
 - name: Install open-vmtools for VMWare
-  apt: 
-    name: open-vm-tools 
+  apt:
+    name: open-vm-tools
     state: present
   when: ansible_virtualization_type == "VMware"
 
 - name: Personalise Vim Debian
-  template: 
-    src: vimrc.j2 
-    dest: "/etc/vim/vimrc" 
+  template:
+    src: vimrc.j2
+    dest: "/etc/vim/vimrc"
 
 - name: Personalise Vim Debian
-  template: 
-    src: vimrc.j2 
-    dest: "/etc/vim/vimrc" 
+  template:
+    src: vimrc.j2
+    dest: "/etc/vim/vimrc"
