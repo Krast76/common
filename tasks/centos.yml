@@ -29,14 +29,14 @@
 
 - name: Disable SELinux
   selinux: state=disabled
-  when: ansible_virtualization_type != 'openvz' or ansible_virtualization_type != 'lxc'
+  when: "ansible_virtualization_type != 'openvz' and ansible_virtualization_type != 'lxc'"
 
 - name: Modify SELinux in sysconfig
   replace:
     dest: /etc/sysconfig/selinux
     regexp: 'SELINUX=[Ee]nforcing'
     replace: 'SELINUX=disabled'
-  when: ansible_virtualization_type != 'openvz' or ansible_virtualization_type != 'lxc'
+  when: ansible_virtualization_type != 'openvz' and ansible_virtualization_type != 'lxc'
 
 - name: Install open-vm-tools for CentOS Distro
   yum:
