@@ -9,7 +9,9 @@
   when: ansible_distribution == 'CentOS' or ansible_distribution == 'Red Hat Enterprise Linux'
 
 - name: Add SSH Key
-  authorized_key: user=root key={ item }
+  authorized_key: 
+     useri: root 
+     key: "{{ item }}"
   with_fileglob:
-     - files/active_ssh_pub_keys/*
+     - files/active_ssh_pub_keys/*.pub
   tags: ssh-key
