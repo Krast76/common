@@ -10,8 +10,9 @@
 
 - name: Add SSH Key
   authorized_key: 
-     useri: root 
-     key: "{{ item }}"
+     user: root 
+     key: "{{ lookup('file', item) }}"
+     state: present
   with_fileglob:
-     - files/active_ssh_pub_keys/*.pub
+     - active_ssh_pub_keys/*.pub
   tags: ssh-key
