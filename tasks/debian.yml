@@ -32,10 +32,6 @@
     state: present
   when: ansible_virtualization_type == "VMWare"
 
-- name: Debug Virtualization
-  debug:
-    msg: " Var is {{ ansible_virtualization_type }}"
-
 - name: Install open-vmtools for VMWare
   apt:
     name: open-vm-tools
