@@ -25,6 +25,7 @@
      - zip
      - screenfetch
      - aptitude
+     - wget
 
 - name: Install open-vm-tools for Debian Distro
   apt:
