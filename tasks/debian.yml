@@ -27,6 +27,7 @@
      - aptitude
      - wget
      - man
+     - apt-utils
 
 - name: Install open-vm-tools for Debian Distro
   apt:
