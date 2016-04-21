@@ -16,3 +16,9 @@
   with_fileglob:
      - active_ssh_pub_keys/*.pub
   tags: ssh-key
+
+- name: Redirect root adresse
+  lineinfile: 
+     dest: /etc/aliases
+     regexp: "^root:"
+     line: 'root:	{{ email_addresses }}'
