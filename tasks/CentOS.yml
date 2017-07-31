@@ -7,6 +7,13 @@
   yum:
    name: "epel-release"
    state: latest
+  when: epel == true
+ 
+- name: Ensure epel is not installed
+  yum:
+   name: "epel-release"
+   state: absent
+  when: epel == false
 
 - name: Install a base package with yum
   yum:
@@ -26,10 +33,18 @@
      - dialog
      - bash-completion
      - zip
+     - psmisc
+  when: epel == true
 
 - name: Disable SELinux
   selinux: state=disabled
   when: "ansible_virtualization_type != 'openvz' and ansible_virtualization_type != 'lxc'"
+
+- name: "Update all packages"
+  yum:
+    name: '*'
+    state: latest
+  when: update == true
 
 - name: Install open-vm-tools for CentOS Distro
   yum:
