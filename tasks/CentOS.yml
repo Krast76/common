@@ -51,8 +51,3 @@
     name: open-vm-tools
     state: latest
   when: ansible_virtualization_type == 'VMWare'
-
-- name: Customize vimrc RHEL Like
-  template:
-   src: vimrc_centos.j2
-   dest: /etc/vimrc
