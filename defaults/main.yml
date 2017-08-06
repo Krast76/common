@@ -2,3 +2,4 @@
 # defaults file for common
 epel: true
 update: false
+sudo: False

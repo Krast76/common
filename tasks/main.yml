@@ -3,3 +3,16 @@
 - name: Include {{ ansible_distribution }} File
   include: "{{ ansible_distribution }}.yml"
 
+- name: Install sudo
+  package:
+    name: sudo
+    state: present
+  when: enable_sudo is defined
+ 
+- name: Create some users
+  user:
+    name: "{{ item.key }}"
+    state: present
+    groups: "{{ item.value.groups }}"
+  with_dict: "{{ users }}"
+  when: users is defined
