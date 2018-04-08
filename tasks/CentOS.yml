@@ -34,6 +34,7 @@
      - bash-completion
      - zip
      - psmisc
+     - libcgroup-tools
   when: epel == true
 
 - name: Disable SELinux
