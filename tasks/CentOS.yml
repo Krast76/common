@@ -19,22 +19,7 @@
   yum:
    name: "{{ item }}"
    state: latest
-  with_items:
-     - vim
-     - man
-     - wget
-     - bind-utils
-     - curl
-     - git
-     - htop
-     - pv
-     - tmux
-     - libselinux-python
-     - dialog
-     - bash-completion
-     - zip
-     - psmisc
-     - libcgroup-tools
+  with_items: "{{ packages }}"
   when: epel == true
 
 - name: Disable SELinux

@@ -1,0 +1,15 @@
+packages:
+  - vim
+  - curl
+  - git
+  - htop
+  - pv
+  - tmux
+  - dialog
+  - bash-completion
+  - zip
+  - screenfetch
+  - aptitude
+  - wget
+  - man
+  - apt-utils

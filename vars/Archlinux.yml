@@ -1,0 +1,12 @@
+packages:
+  - curl
+  - git
+  - htop
+  - tmux
+  - unzip
+  - screenfetch
+  - wget
+  - man
+  - strace
+  - vim
+  - tcpdump

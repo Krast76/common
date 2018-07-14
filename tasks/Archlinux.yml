@@ -2,18 +2,7 @@
   pacman:
    name: "{{ item }}"
    state: present
-  with_items:
-   - curl
-   - git
-   - htop
-   - tmux
-   - unzip
-   - screenfetch
-   - wget
-   - man
-   - strace
-   - vim
-   - tcpdump
+  with_items: "{{ packages }}"
 
 - name: Update all package
   pacman:

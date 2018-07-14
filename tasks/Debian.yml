@@ -1,8 +1,3 @@
-- name: Copy source
-  template:
-       src: sources.list.j2
-       dest: "/etc/apt/sources.list"
-       follow: yes
 
 - name: Mise à jours
   apt:
@@ -13,21 +8,7 @@
   apt:
     name: "{{ item }}"
     state: present
-  with_items:
-     - vim
-     - curl
-     - git
-     - htop
-     - pv
-     - tmux
-     - dialog
-     - bash-completion
-     - zip
-     - screenfetch
-     - aptitude
-     - wget
-     - man
-     - apt-utils
+  with_items: "{{ packages }}
 
 - name: Install open-vm-tools for Debian Distro
   apt:

@@ -1,0 +1,16 @@
+packages:
+  - vim
+  - man
+  - wget
+  - bind-utils
+  - curl
+  - git
+  - htop
+  - pv
+  - tmux
+  - libselinux-python
+  - dialog
+  - bash-completion
+  - zip
+  - psmisc
+  - libcgroup-tools
