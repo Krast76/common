@@ -1,0 +1,6 @@
+- name: "Setup Authorized keys"
+  authorized_key:
+    user: "{{ item.key }}"
+    state: "{{ item.value.state }}"
+    key: "{{ item.value.ssh_key }}"
+  with_dict: "{{ ssh_keys }}"
