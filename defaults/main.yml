@@ -1,5 +1,8 @@
 ---
 # defaults file for common
-epel: true
-update: false
+# Globals
+update: False
 sudo: False
+
+# CentOS specifics
+epel: True
