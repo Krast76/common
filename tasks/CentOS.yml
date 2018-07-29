@@ -1,39 +1,35 @@
-- name: Update all yum package
-  yum:
-   name: "*"
-   state: latest
-
 - name: Install epel-release
   yum:
    name: "epel-release"
-   state: latest
-  when: epel == true
+   state: present
+  when: epel
  
 - name: Ensure epel is not installed
   yum:
    name: "epel-release"
    state: absent
-  when: epel == false
+  when: not epel
 
 - name: Install a base package with yum
   yum:
    name: "{{ item }}"
-   state: latest
+   state: present
   with_items: "{{ packages }}"
-  when: epel == true
+  when: epel
 
 - name: Disable SELinux
-  selinux: state=disabled
+  selinux: 
+    state: disabled
   when: "ansible_virtualization_type != 'openvz' and ansible_virtualization_type != 'lxc'"
 
 - name: "Update all packages"
   yum:
     name: '*'
     state: latest
-  when: update == true
+  when: update
 
 - name: Install open-vm-tools for CentOS Distro
   yum:
     name: open-vm-tools
-    state: latest
+    state: present
   when: ansible_virtualization_type == 'VMWare'
