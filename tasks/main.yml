@@ -6,10 +6,6 @@
 - name: "Include tasks"
   include: "{{ ansible_distribution }}.yml"
 
-- name: "Include ssh"
-  include: ssh.yml
-  when: ssh_keys is defined
- 
 - name: Create some users
   user:
     name: "{{ item.key }}"
@@ -17,3 +13,8 @@
     groups: "{{ item.value.groups }}"
   with_dict: "{{ users }}"
   when: users is defined
+
+- name: "Include ssh"
+  include: ssh.yml
+  when: ssh_keys is defined
+ 
