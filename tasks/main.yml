@@ -18,3 +18,6 @@
   include: ssh.yml
   when: ssh_keys is defined
  
+- name: "Include virt"
+  include: virt.yml
+  when: ansible_virtualization_role == "guest"

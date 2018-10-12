@@ -1,0 +1,13 @@
+- block:
+    - name: "Install QEMU agent"
+      package:
+        name: qemu-guest-agent
+        state: present
+    
+    - name: "Start QEMU agent"
+      systemd:
+        name: qemu-guest-agent
+        state: started
+        enabled: yes
+  when: ansible_virtualization_type == 'kvm'
+
