@@ -14,3 +14,4 @@ packages:
   - zip
   - psmisc
   - libcgroup-tools
+  - yum-plugin-versionlock
