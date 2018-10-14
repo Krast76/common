@@ -11,3 +11,8 @@
         enabled: yes
   when: ansible_virtualization_type == 'kvm'
 
+- name: "Install open-vm-tools"
+  yum:
+    name: open-vm-tools
+    state: "{{ package_state }}"
+  when: ansible_virtualization_type == 'VMWare'

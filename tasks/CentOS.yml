@@ -28,8 +28,3 @@
     state: latest
   when: update
 
-- name: Install open-vm-tools for CentOS Distro
-  yum:
-    name: open-vm-tools
-    state: present
-  when: ansible_virtualization_type == 'VMWare'
