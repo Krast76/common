@@ -17,11 +17,6 @@
   with_items: "{{ packages }}"
   when: epel
 
-- name: Disable SELinux
-  selinux: 
-    state: disabled
-  when: "ansible_virtualization_type != 'openvz' and ansible_virtualization_type != 'lxc'"
-
 - name: "Update all packages"
   yum:
     name: '*'
