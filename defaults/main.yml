@@ -1,6 +1,7 @@
 ---
 # defaults file for common
 # Globals
+package_state: "present"
 update: False
 sudo: False
 
