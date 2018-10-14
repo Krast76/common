@@ -1,16 +1,16 @@
-- name: Install epel-release
+- name: "Install epel-release"
   yum:
    name: "epel-release"
    state: present
   when: epel
  
-- name: Ensure epel is not installed
+- name: "Ensure epel is not installed"
   yum:
    name: "epel-release"
    state: absent
   when: not epel
 
-- name: Install a base package with yum
+- name: "Install a base package with yum"
   yum:
    name: "{{ item }}"
    state: present
