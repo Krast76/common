@@ -16,3 +16,4 @@ packages:
   - libcgroup-tools
   - yum-plugin-versionlock
   - tree
+  - iotop
