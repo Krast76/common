@@ -15,5 +15,6 @@ packages:
   - psmisc
   - libcgroup-tools
   - yum-plugin-versionlock
+  - deltarpm
   - tree
   - iotop
