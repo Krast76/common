@@ -12,9 +12,8 @@
 
 - name: "Install a base package with yum"
   yum:
-   name: "{{ item }}"
+   name: "{{ packages }}"
    state: "{{ package_state }}"
-  with_items: "{{ packages }}"
   when: epel
 
 - name: "Update all packages"
