@@ -2,23 +2,23 @@
   yum:
    name: "epel-release"
    state: "{{ package_state }}"
-  when: epel
+  when: epel | bool
  
 - name: "Ensure epel is not installed"
   yum:
    name: "epel-release"
    state: absent
-  when: not epel
+  when: not epel | bool
 
 - name: "Install a base package with yum"
   yum:
    name: "{{ packages }}"
    state: "{{ package_state }}"
-  when: epel
+  when: epel | bool
 
 - name: "Update all packages"
   yum:
     name: '*'
     state: latest
-  when: update
+  when: update | bool
 
