@@ -7,3 +7,4 @@ sudo: False
 
 # CentOS specifics
 epel: True
+kernel_number: 1

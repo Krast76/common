@@ -16,6 +16,12 @@
    state: "{{ package_state }}"
   when: epel | bool
 
+- name: "Remove older kernel"
+  shell: "package-cleanup --oldkernels --count={{ kernel_number }} -y"
+  register: remove_kernels
+  changed_when: '"No old kernels to remove" not in remove_kernels.stdout'
+  failed_when: "remove_kernels.rc != 0"
+
 - name: "Update all packages"
   yum:
     name: '*'
