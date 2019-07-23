@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.org/Krast76/common.svg?branch=master)](https://travis-ci.org/Krast76/common)
+
 Role Name
 =========
 
