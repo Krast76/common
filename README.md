@@ -12,12 +12,33 @@ None. Only servers who can be managed by Ansible
 Role Variables
 --------------
 
-package_state: (Default: present) 
-update: (Default: False) Do a package upgrade
+* package_state: (Default: present) 
+* update: (Default: False) Do a package upgrade
+* users: (Default: empty) Create user, and set it in groups
 
+exemple :
+```yaml
+users:
+  bob:
+    groups: wheel,toto
+```
+
+* ssh_key: (Default: empty) Setup ssh keys
+
+exemple :
+
+```yaml
+ssh_key:
+  - name: "bob" # User who will get the public ssh keys on his .authorized_key
+    state: "present" # The pub key should be present
+    ssh_key:
+      - "PUBKEY 1"
+      - "PUBKEY 2"
+```
 # Only for CentOS
-epel: Install EPEL repository
-kernel_number: Default: 1) number of old kernel to keep
+
+* epel: Install EPEL repository
+* kernel_number: Default: 1) number of old kernel to keep
 
 Dependencies
 ------------
