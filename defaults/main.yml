@@ -3,7 +3,6 @@
 # Globals
 package_state: "present"
 update: False
-sudo: False
 
 # CentOS specifics
 epel: True
