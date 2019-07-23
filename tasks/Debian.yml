@@ -33,8 +33,3 @@
     name: open-vm-tools
     state: present
   when: ansible_virtualization_type == "VMware"
-
-- name: Personalise Vim Debian
-  template:
-    src: vimrc.j2
-    dest: "/etc/vim/vimrc"
