@@ -28,3 +28,7 @@
     state: latest
   when: update | bool
 
+- name: "Configure SELinux"
+  selinux:
+    state: "{{ selinux_state }}"
+    policy: "{{ selinux_policy }}"

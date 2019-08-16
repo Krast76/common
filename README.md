@@ -40,6 +40,8 @@ ssh_key:
 
 * epel: Install EPEL repository
 * kernel_number: Default: 1) number of old kernel to keep
+* selinux_state: (Default: enforcing) Set the state of SELinux 
+* selinux_policy: (Default: targeted) Set the policy of SELinux
 
 Dependencies
 ------------

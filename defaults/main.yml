@@ -7,3 +7,5 @@ update: False
 # CentOS specifics
 epel: True
 kernel_number: 1
+selinux_state: enforcing
+selinux_policy: targeted
