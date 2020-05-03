@@ -15,6 +15,7 @@ Role Variables
 
 * package_state: (Default: present) 
 * update: (Default: False) Do a package upgrade
+* system_timezone: (not defined by default) Set the system timezone
 * users: (Default: empty) Create user, and set it in groups
 
 exemple :

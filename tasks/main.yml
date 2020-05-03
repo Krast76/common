@@ -6,6 +6,11 @@
 - name: "Include tasks"
   include: "{{ ansible_distribution }}.yml"
 
+- name: "Set timezone"
+  timezone:
+    name: "{{ system_timezone }}"
+  when: system_timezone is defined
+
 - name: Create some users
   user:
     name: "{{ item.key }}"
