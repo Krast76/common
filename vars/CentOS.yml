@@ -1,12 +1,12 @@
-packages:
+packages: "{{ base_packages }}{% if epel %}+ {{ base_packages }}{% endif %}"
+
+base_packages:
   - vim
   - man
   - wget
   - bind-utils
   - curl
   - git
-  - htop
-  - pv
   - tmux
   - libselinux-python
   - dialog
@@ -20,3 +20,8 @@ packages:
   - iotop
   - smartmontools
   - ipset
+  - sysfsutils
+
+epel_packages:
+  - htop
+  - pv

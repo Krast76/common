@@ -11,7 +11,7 @@
   when: not epel | bool
 
 - name: "Install a base package with yum"
-  yum:
+  package:
    name: "{{ packages }}"
    state: "{{ package_state }}"
   when: epel | bool
@@ -23,7 +23,7 @@
   failed_when: "remove_kernels.rc != 0"
 
 - name: "Update all packages"
-  yum:
+  package:
     name: '*'
     state: latest
   when: update | bool
