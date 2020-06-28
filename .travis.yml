@@ -10,8 +10,9 @@ env:
     version: xenial
   - distribution: ubuntu
     version: bionic
-  - distribution: ubuntu
-    version: focal
+# Not tested because Ansible PPA not yet released for Focal
+#  - distribution: ubuntu
+#    version: focal
 
 services:
   - docker
