@@ -1,0 +1,17 @@
+
+- name: Mise à jours
+  package:
+    upgrade: dist
+    update_cache: yes
+
+- name: Install a base package with apt
+  package:
+    name: "{{ item }}"
+    state: present
+  with_items: "{{ packages }}"
+
+- name: "Upgrade all packages"
+  package:
+    name: '*'
+    state: latest
+  when: update | bool

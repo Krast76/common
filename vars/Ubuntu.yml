@@ -13,3 +13,4 @@ packages:
   - wget
   - man
   - apt-utils
+  - tzdata
