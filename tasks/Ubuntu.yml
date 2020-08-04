@@ -1,3 +1,5 @@
+- name: "Include distribution vars"
+  include_vars: "{{ ansible_distribution }}.yml"
 
 - name: Mise à jours
   package:
