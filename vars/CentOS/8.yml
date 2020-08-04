@@ -1,0 +1,25 @@
+packages: "{{ base_packages }}{% if epel %}+ {{ base_packages }}{% endif %}"
+
+base_packages:
+  - vim
+  - man
+  - wget
+  - bind-utils
+  - curl
+  - git
+  - tmux
+  - dialog
+  - bash-completion
+  - zip
+  - psmisc
+  - libcgroup-tools
+  - python3-dnf-plugin-versionlock
+  - tree
+  - iotop
+  - smartmontools
+  - ipset
+  - sysfsutils
+
+epel_packages:
+  - htop
+  - pv

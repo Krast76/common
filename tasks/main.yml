@@ -1,8 +1,5 @@
 ---
 # tasks file for common
-- name: "Include distribution vars"
-  include_vars: "{{ ansible_distribution }}.yml"
-
 - name: "Include tasks"
   include: "{{ ansible_distribution }}.yml"
 
