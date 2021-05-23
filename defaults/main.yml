@@ -3,6 +3,7 @@
 # Globals
 package_state: "present"
 update: False
+manage_virt_guest: False
 
 # CentOS specifics
 epel: True

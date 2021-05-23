@@ -22,4 +22,4 @@
  
 - name: "Include virt"
   include: virt.yml
-  when: ansible_virtualization_role == "guest"
+  when: ansible_virtualization_role == "guest" and manage_virt_guest == true
