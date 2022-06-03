@@ -13,6 +13,7 @@
     name: "{{ item.key }}"
     state: present
     groups: "{{ item.value.groups }}"
+    shell: "{{ item.value.shell | default('/bin/bash') }}"
   with_dict: "{{ users }}"
   when: users is defined
 
