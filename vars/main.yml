@@ -1,2 +1,7 @@
 ---
-# vars file for common
+vars_file: "{{ lookup('ansible.builtin.first_found', files=order, paths=['../vars/']) }}"
+tasks_file: "{{ lookup('ansible.builtin.first_found', files=order) }}"
+order:
+  - "{{ ansible_os_family }}.yml"
+  - "{{ ansible_distribution }}.yml"
+  - "{{ ansible_distribution }}/{{ ansible_distribution_major_version }}.yml"

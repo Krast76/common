@@ -1,7 +1,7 @@
 ---
 # tasks file for common
 - name: "Include tasks"
-  include: "{{ ansible_distribution }}.yml"
+  include_tasks: "{{ tasks_file }}"
 
 - name: "Set timezone"
   timezone:
@@ -18,9 +18,9 @@
   when: users is defined
 
 - name: "Include ssh"
-  include: ssh.yml
+  include_tasks: ssh.yml
   when: ssh_keys is defined
  
 - name: "Include virt"
-  include: virt.yml
+  include_tasks: virt.yml
   when: ansible_virtualization_role == "guest" and manage_virt_guest == true

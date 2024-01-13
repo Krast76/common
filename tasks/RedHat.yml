@@ -1,5 +1,5 @@
 - name: "Include distribution vars"
-  include_vars: "{{ ansible_distribution }}/{{ ansible_distribution_major_version }}.yml"
+  include_vars: "{{ vars_file }}"
 
 - name: "Install epel-release"
   yum:
